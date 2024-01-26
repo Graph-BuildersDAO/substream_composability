@@ -1,0 +1,11 @@
+deriveFrom: https://github.com/Graph-BuildersDAO/substreams/releases/download/chainlink-prices-v1.0.2/chainlink-price-substream-v1.0.2.spkg
+
+package:
+  name: "chainlink_prices"
+  version: "v1.0.2"
+
+initialBlocks:
+  store_confirmed_feeds: 11480180
+  get_chainlink_answers: 11480180
+  chainlink_price_store: 11480180
+  graph_out: 11480180

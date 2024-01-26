@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package userdeposit.v1;
+
+message UserDeposits {
+    repeated UserDeposit deposits = 1;
+}
+
+message UserDeposit {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes sender = 5;
+    string amount = 6;
+    bytes referral = 7;
+    string usdValue = 8;
+}

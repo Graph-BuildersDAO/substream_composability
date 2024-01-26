@@ -1,0 +1,218 @@
+type approval @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    owner: String!
+    spender: String!
+    value: BigDecimal!
+}
+type cl_validators_updated @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    post_cl_validators: BigDecimal!
+    pre_cl_validators: BigDecimal!
+    report_timestamp: BigDecimal!
+}
+type contract_version_set @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    version: BigDecimal!
+}
+type deposited_validators_changed @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    deposited_validators: BigDecimal!
+}
+type eip_712_st_eth_initialized @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    eip_712_st_eth: String!
+}
+type el_rewards_received @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    amount: BigDecimal!
+}
+type eth_distributed @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    execution_layer_rewards_withdrawn: BigDecimal!
+    post_buffered_ether: BigDecimal!
+    post_cl_balance: BigDecimal!
+    pre_cl_balance: BigDecimal!
+    report_timestamp: BigDecimal!
+    withdrawals_withdrawn: BigDecimal!
+}
+type lido_locator_set @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    lido_locator: String!
+}
+type proxy_deposit @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    sender: String!
+    value: BigDecimal!
+}
+type recover_to_vault @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    amount: BigDecimal!
+    token: String!
+    vault: String!
+}
+type resumed @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+}
+type script_result @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    executor: String!
+    input: String!
+    return_data: String!
+    script: String!
+}
+type shares_burnt @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    account: String!
+    post_rebase_token_amount: BigDecimal!
+    pre_rebase_token_amount: BigDecimal!
+    shares_amount: BigDecimal!
+}
+type staking_limit_removed @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+}
+type staking_limit_set @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    max_stake_limit: BigDecimal!
+    stake_limit_increase_per_block: BigDecimal!
+}
+type staking_paused @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+}
+type staking_resumed @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+}
+type stopped @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+}
+type submitted @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    amount: BigDecimal!
+    referral: String!
+    sender: String!
+}
+type token_rebased @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    post_total_ether: BigDecimal!
+    post_total_shares: BigDecimal!
+    pre_total_ether: BigDecimal!
+    pre_total_shares: BigDecimal!
+    report_timestamp: BigDecimal!
+    shares_minted_as_fees: BigDecimal!
+    time_elapsed: BigDecimal!
+}
+type transfer @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    from: String!
+    to: String!
+    value: BigDecimal!
+}
+type transfer_shares @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    from: String!
+    shares_value: BigDecimal!
+    to: String!
+}
+type unbuffered @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    amount: BigDecimal!
+}
+type withdrawals_received @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    amount: BigDecimal!
+}

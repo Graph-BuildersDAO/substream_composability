@@ -1,0 +1,250 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package contract.v1;
+
+message Events {
+    repeated Approval approvals = 1;
+    repeated ClValidatorsUpdated cl_validators_updateds = 2;
+    repeated ContractVersionSet contract_version_sets = 3;
+    repeated DepositedValidatorsChanged deposited_validators_changeds = 4;
+    repeated Eip712StEthInitialized eip_712_st_eth_initializeds = 5;
+    repeated ElRewardsReceived el_rewards_receiveds = 6;
+    repeated EthDistributed eth_distributeds = 7;
+    repeated LidoLocatorSet lido_locator_sets = 8;
+    repeated ProxyDeposit proxy_deposits = 9;
+    repeated RecoverToVault recover_to_vaults = 10;
+    repeated Resumed resumeds = 11;
+    repeated ScriptResult script_results = 12;
+    repeated SharesBurnt shares_burnts = 13;
+    repeated StakingLimitRemoved staking_limit_removeds = 14;
+    repeated StakingLimitSet staking_limit_sets = 15;
+    repeated StakingPaused staking_pauseds = 16;
+    repeated StakingResumed staking_resumeds = 17;
+    repeated Stopped stoppeds = 18;
+    repeated Submitted submitteds = 19;
+    repeated TokenRebased token_rebaseds = 20;
+    repeated Transfer transfers = 21;
+    repeated TransferShares transfer_shares = 22;
+    repeated Unbuffered unbuffereds = 23;
+    repeated WithdrawalsReceived withdrawals_receiveds = 24;
+}
+
+message Approval {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes owner = 5;
+    bytes spender = 6;
+    string value = 7;
+}
+
+message ClValidatorsUpdated {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string report_timestamp = 5;
+    string pre_cl_validators = 6;
+    string post_cl_validators = 7;
+}
+
+message ContractVersionSet {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string version = 5;
+}
+
+message DepositedValidatorsChanged {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string deposited_validators = 5;
+}
+
+message Eip712StEthInitialized {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes eip_712_st_eth = 5;
+}
+
+message ElRewardsReceived {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string amount = 5;
+}
+
+message EthDistributed {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string report_timestamp = 5;
+    string pre_cl_balance = 6;
+    string post_cl_balance = 7;
+    string withdrawals_withdrawn = 8;
+    string execution_layer_rewards_withdrawn = 9;
+    string post_buffered_ether = 10;
+}
+
+message LidoLocatorSet {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes lido_locator = 5;
+}
+
+message ProxyDeposit {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes sender = 5;
+    string value = 6;
+}
+
+message RecoverToVault {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes vault = 5;
+    bytes token = 6;
+    string amount = 7;
+}
+
+message Resumed {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+}
+
+message ScriptResult {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes executor = 5;
+    bytes script = 6;
+    bytes input = 7;
+    bytes return_data = 8;
+}
+
+message SharesBurnt {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes account = 5;
+    string pre_rebase_token_amount = 6;
+    string post_rebase_token_amount = 7;
+    string shares_amount = 8;
+}
+
+message StakingLimitRemoved {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+}
+
+message StakingLimitSet {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string max_stake_limit = 5;
+    string stake_limit_increase_per_block = 6;
+}
+
+message StakingPaused {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+}
+
+message StakingResumed {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+}
+
+message Stopped {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+}
+
+message Submitted {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes sender = 5;
+    string amount = 6;
+    bytes referral = 7;
+}
+
+message TokenRebased {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string report_timestamp = 5;
+    string time_elapsed = 6;
+    string pre_total_shares = 7;
+    string pre_total_ether = 8;
+    string post_total_shares = 9;
+    string post_total_ether = 10;
+    string shares_minted_as_fees = 11;
+}
+
+message Transfer {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes from = 5;
+    bytes to = 6;
+    string value = 7;
+}
+
+message TransferShares {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    bytes from = 5;
+    bytes to = 6;
+    string shares_value = 7;
+}
+
+message Unbuffered {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string amount = 5;
+}
+
+message WithdrawalsReceived {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string amount = 5;
+}
